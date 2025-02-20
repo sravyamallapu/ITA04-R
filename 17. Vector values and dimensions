@@ -1,0 +1,18 @@
+# Create a vector of values (24 elements)
+values <- 6:29  # This gives us exactly 24 elements
+
+# Specify the dimensions of the array
+dimensions <- c(4, 3, 2)  # 4 rows, 3 columns, 2 parts
+
+# Define names for each dimension
+dim_names <- list(
+  Rows = c("Row1", "Row2", "Row3", "Row4"),   # Length = 4
+  Columns = c("Col1", "Col2", "Col3"),        # Length = 3
+  Parts = c("Part1", "Part2")                  # Length = 2
+)
+
+# Create the array
+my_array <- array(values, dim = dimensions, dimnames = dim_names)
+
+# Print the array
+print(my_array)
