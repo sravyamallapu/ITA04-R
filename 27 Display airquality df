@@ -1,0 +1,26 @@
+# Load the built-in airquality dataset
+data(airquality)
+
+# Check whether airquality is a data frame
+if (is.data.frame(airquality)) {
+  cat("airquality is a data frame.\n")
+} else {
+  cat("airquality is not a data frame.\n")
+}
+
+# Display the column names before removing columns
+cat("Column names before removing Solar.R and Wind:\n")
+print(names(airquality))
+
+# Order the data frame by the first (Ozone) and second (Temp) columns
+ordered_airquality <- airquality[order(airquality$Ozone, airquality$Temp), ]
+
+# Remove the variables 'Solar.R' and 'Wind'
+final_airquality <- subset(ordered_airquality, select = -c(Solar.R, Wind))
+
+# Display the column names after removing columns
+cat("Column names after removing Solar.R and Wind:\n")
+print(names(final_airquality))
+
+# Display the resulting data frame
+print(final_airquality)
